@@ -21,6 +21,7 @@ dependencies:
   flutter_native_splash: ^2.4.7
   flutter_launcher_icons: ^0.14.4
   flutter_spinkit: ^5.2.2
+  smooth_page_indicator: ^2.0.1
 
 # Icons
   cupertino_icons: ^1.0.8
@@ -51,6 +52,7 @@ flutter:
     - assets/images/
     - assets/icons/brands/
     - assets/logos/
+    - assets/images/on_boarding_images
 
 #--------------- LOCAL FONTS ---------------#
   fonts:
