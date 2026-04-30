@@ -1,7 +1,11 @@
+import 'package:iconsax/iconsax.dart';
+import 'package:b_store_app/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
+import 'package:b_store_app/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
+import 'package:b_store_app/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 import 'package:b_store_app/utils/constants/image_strings.dart';
-import 'package:b_store_app/utils/constants/text_strings.dart';
-import 'package:b_store_app/utils/helpers/helper_functions.dart';
 import 'package:b_store_app/utils/constants/sizes.dart';
+import 'package:b_store_app/utils/constants/text_strings.dart';
+import 'package:b_store_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -34,43 +38,19 @@ class OnBoardingScreen extends StatelessWidget {
           ),
 
           /// Skip Button
-        ],
-      ),
-    );
-  }
-}
+          const OnBoardingSkip(),
 
-class OnBoardingPage extends StatelessWidget {
-  const OnBoardingPage({
-    super.key,
-    required this.image,
-    required this.title,
-    required this.subTitle,
-  });
+          /// Dot Navigation SmoothPageIndicator
+          const OnBoardingDotNavigation(),
 
-  final String image, title, subTitle;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(BSizes.defaultSpace),
-      child: Column(
-        children: [
-          Image(
-            width: BHelperFunctions.screenWidth() * 0.8,
-            height: BHelperFunctions.screenHeight() * 0.6,
-            image: AssetImage(image),
-          ),
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineMedium,
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: BSizes.spaceBtwItems),
-          Text(
-            subTitle,
-            style: Theme.of(context).textTheme.bodyMedium,
-            textAlign: TextAlign.center,
+          /// Circular Button
+          Positioned(
+            right: BSizes.defaultSpace,
+            bottom: BDeviceUtils.getBottomNavigationBarHeight(),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Icon(Iconsax.arrow_right_3),
+            ),
           ),
         ],
       ),
