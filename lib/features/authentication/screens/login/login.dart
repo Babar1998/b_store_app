@@ -1,4 +1,5 @@
 import 'package:b_store_app/common/styles/spacing_styles.dart';
+import 'package:b_store_app/utils/constants/colors.dart';
 import 'package:b_store_app/utils/constants/image_strings.dart';
 import 'package:b_store_app/utils/constants/sizes.dart';
 import 'package:b_store_app/utils/constants/text_strings.dart';
@@ -26,7 +27,7 @@ class LoginScreen extends StatelessWidget {
                   Image(
                     height: 150,
                     image: AssetImage(
-                      dark ? BImages.lightappLogo : BImages.darkappLogo,
+                      dark ? BImages.darkappLogo : BImages.lightappLogo,
                     ),
                   ),
                   Text(
@@ -42,20 +43,90 @@ class LoginScreen extends StatelessWidget {
               ),
 
               Form(
-                child: Column(
-                  children: [
-                    /// Email
-                    TextFormField(
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Iconsax.direct_right),
-                        labelText: BTexts.email,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: BSizes.spaceBtwSections,
+                  ),
+                  child: Column(
+                    children: [
+                      /// Email
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(Iconsax.direct_right),
+                          labelText: BTexts.email,
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: BSizes.spaceBtwInputFields),
 
-                    /// Password
-                  ],
+                      /// Password
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(Iconsax.password_check),
+                          labelText: BTexts.password,
+                          suffixIcon: Icon(Iconsax.eye_slash),
+                        ),
+                      ),
+                      const SizedBox(height: BSizes.spaceBtwInputFields / 2),
+
+                      /// Remeber Me & Forget Password
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          /// Remember Me
+                          Row(
+                            children: [
+                              Checkbox(value: true, onChanged: (value) {}),
+                              const Text(BTexts.rememberMe),
+                            ],
+                          ),
+
+                          /// Forget Password
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(BTexts.forgetPassword),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: BSizes.spaceBtwSections),
+
+                      /// Sign In Button
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(BTexts.signIn),
+                        ),
+                      ),
+                      const SizedBox(height: BSizes.spaceBtwItems),
+
+                      /// Create Account Button
+                      SizedBox(
+                        width: double.infinity,
+                        child: OutlinedButton(
+                          onPressed: () {},
+                          child: Text(BTexts.createAccount),
+                        ),
+                      ),
+                      const SizedBox(height: BSizes.spaceBtwSections),
+                    ],
+                  ),
                 ),
               ),
+
+              /// Divider
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Divider(
+                    color: dark ? BColors.darkGrey : BColors.grey,
+                    thickness: 0.5,
+                    indent: 60,
+                    endIndent: 5,
+                  ),
+                ],
+              ),
+
+              /// Footer
             ],
           ),
         ),
