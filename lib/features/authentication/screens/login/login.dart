@@ -5,6 +5,7 @@ import 'package:b_store_app/utils/constants/sizes.dart';
 import 'package:b_store_app/utils/constants/text_strings.dart';
 import 'package:b_store_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -107,7 +108,6 @@ class LoginScreen extends StatelessWidget {
                           child: Text(BTexts.createAccount),
                         ),
                       ),
-                      const SizedBox(height: BSizes.spaceBtwSections),
                     ],
                   ),
                 ),
@@ -117,16 +117,66 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Divider(
-                    color: dark ? BColors.darkGrey : BColors.grey,
-                    thickness: 0.5,
-                    indent: 60,
-                    endIndent: 5,
+                  Flexible(
+                    child: Divider(
+                      color: dark ? BColors.darkGrey : BColors.grey,
+                      thickness: 0.5,
+                      indent: 60,
+                      endIndent: 5,
+                    ),
+                  ),
+                  Text(
+                    BTexts.orSignInWith.capitalize!,
+                    style: Theme.of(context).textTheme.labelMedium,
+                  ),
+                  Flexible(
+                    child: Divider(
+                      color: dark ? BColors.darkGrey : BColors.grey,
+                      thickness: 0.5,
+                      indent: 5,
+                      endIndent: 60,
+                    ),
                   ),
                 ],
               ),
 
+              const SizedBox(height: BSizes.spaceBtwSections),
+
               /// Footer
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: BColors.grey),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Image(
+                        width: BSizes.iconMd,
+                        height: BSizes.iconMd,
+                        image: AssetImage(BImages.google),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: BSizes.spaceBtwItems),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: BColors.grey),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Image(
+                        width: BSizes.iconMd,
+                        height: BSizes.iconMd,
+                        image: AssetImage(BImages.facebook),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
