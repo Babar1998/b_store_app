@@ -49,7 +49,7 @@ class SignupScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(width: BSizes.spaceBtwInputFields),
+                    const SizedBox(height: BSizes.spaceBtwInputFields),
 
                     /// Username
                     TextFormField(
@@ -59,11 +59,43 @@ class SignupScreen extends StatelessWidget {
                         prefixIcon: Icon(Iconsax.user_edit),
                       ),
                     ),
+                    const SizedBox(height: BSizes.spaceBtwInputFields),
 
                     /// Email
+                    TextFormField(
+                      expands: false,
+                      decoration: const InputDecoration(
+                        labelText: BTexts.email,
+                        prefixIcon: Icon(Iconsax.direct),
+                      ),
+                    ),
+                    const SizedBox(height: BSizes.spaceBtwInputFields),
+
                     /// Phone Number
+                    TextFormField(
+                      expands: false,
+                      decoration: const InputDecoration(
+                        labelText: BTexts.phoneNo,
+                        prefixIcon: Icon(Iconsax.call),
+                      ),
+                    ),
+                    const SizedBox(height: BSizes.spaceBtwInputFields),
+
+                    /// Password
+                    TextFormField(
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        labelText: BTexts.password,
+                        prefixIcon: Icon(Iconsax.password_check),
+                        suffixIcon: Icon(Iconsax.eye_slash),
+                      ),
+                    ),
+                    const SizedBox(height: BSizes.spaceBtwSections),
+
                     /// Terma&Conditions Checkbox
+
                     /// SignUp Button
+
                   ],
                 ),
               ),
